@@ -2,4 +2,3 @@
 Just a simple C++ game that I made.
 
 *by plinkon*
-test
