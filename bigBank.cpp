@@ -135,7 +135,7 @@ void choice(bank::account acnt) // choice
             cout << "---ACCOUNTS---\n";
             cout << "1: " << account1.name << "\n";
             cout << "2: " << account2.name << "\n";
-            cout << "2: " << account3.name << "\n";
+            cout << "3: " << account3.name << "\n";
             cout << "--------------\n\n";
             cin.ignore();
             cout << "Choose a bank account: ";
