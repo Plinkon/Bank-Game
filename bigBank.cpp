@@ -62,6 +62,8 @@ void bankLocation() // Bank scene
 
         cout << "Great name! Creating bank accout " << acnt1 << ":\n";
         account1.name = acnt1;
+        bal = 100;
+        account1.balance = 25;
 
         std::this_thread::sleep_for(std::chrono::seconds(2));
         cout << "Account created!\n";
@@ -75,6 +77,8 @@ void bankLocation() // Bank scene
 
     else if (firstTimeBank == false)
     {
+        string input;
+
         cout << "Welcome back! You know how things roll arround here so i'll not interupt.\n\n";
         cout << "---OPTIONS---\n";
         cout << "1: check overall balance\n";
@@ -84,7 +88,38 @@ void bankLocation() // Bank scene
         cout << "4: deposit\n";
         cout << "5: withdrawal\n";
         cout << "-------------\n\n";
+        getline(cin, input);
 
+        if (input == "check overall balance")
+        {
+
+        }
+        
+        if (input == "check account balance")
+        {
+            
+        }
+        
+        if (input == "add account")
+        {
+            
+        }
+
+        
+        if (input == "delete account")
+        {
+            
+        }
+        
+        if (input == "deposit")
+        {
+            
+        }
+        
+        if (input == "withdrawal")
+        {
+            
+        }
     }
 }
 
