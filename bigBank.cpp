@@ -176,7 +176,33 @@ void bankLocation() // Bank scene
             
             if (input == "add account")
             {
-                
+                string name;
+
+                system("cls");
+                cout << "Enter account name: ";
+                cin.ignore();
+                getline(cin, name);
+
+                if (account1.name.empty() && account1.balance == 0)
+                {
+                    account1.name = name;
+                }
+
+                else if (account2.name.empty() && account2.balance == 0)
+                {
+                    account2.name = name;
+                }
+
+                else if (account3.name.empty() && account3.balance == 0)
+                {
+                    account3.name = name;
+                }
+
+                else
+                {
+                    cout << "\n\nAll account slots are full!\n\n";
+                    choice();
+                }
             }
 
             
