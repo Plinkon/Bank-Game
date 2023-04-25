@@ -107,6 +107,7 @@ void bankLocation() // Bank scene
             bool exit = false;
             int accountInput;
 
+            
             while(!exit)
             {
                 exit = false;
@@ -148,7 +149,6 @@ void bankLocation() // Bank scene
                     else
                     {
                         cout << "\n\nBalance in account: " << account2.balance << "\n\n";
-                        break;
                         exit = !exit;
                         choice();
                     }
@@ -165,7 +165,6 @@ void bankLocation() // Bank scene
                     else
                     {
                         cout << "\n\nBalance in account: " << account3.balance << "\n\n";
-                        break;
                         exit = !exit;
                         choice();
                     }
@@ -191,16 +190,22 @@ void bankLocation() // Bank scene
                 if (account1.name.empty() && account1.balance == 0)
                 {
                     account1.name = name;
+                    std::cout << "Account " << name << " created!\n\n";
+                    choice();
                 }
 
                 else if (account2.name.empty() && account2.balance == 0)
                 {
                     account2.name = name;
+                    std::cout << "Account " << name << " created!\n\n";
+                    choice();
                 }
 
                 else if (account3.name.empty() && account3.balance == 0)
                 {
                     account3.name = name;
+                    std::cout << "Account " << name << " created!\n\n";
+                    choice();
                 }
 
                 else
@@ -213,12 +218,199 @@ void bankLocation() // Bank scene
             
             if (input == "delete account")
             {
-                
+                bool exit = false;
+                int accountInput;
+
+                while(!exit)
+                {
+                    exit = false;
+
+                    system("cls");
+                    cout << "---ACCOUNTS---\n";
+                    cout << "1: " << account1.name << "\n";
+                    cout << "2: " << account2.name << "\n";
+                    cout << "3: " << account3.name << "\n";
+                    cout << "--------------\n\n";
+                    cin.ignore();
+                    cout << "Choose a bank account: ";
+                    cin >> accountInput;
+
+                    if (accountInput == 1)
+                    {
+                        if (account1.name.empty())
+                        {
+                            cout << "\nAccount is empty!\n";
+                            std::this_thread::sleep_for(std::chrono::seconds(2));
+                        }
+
+                        else
+                        {   
+                            cout << "\n\nDeleted account: " << account1.name << "\n\n";
+                            account1.name = account1.name.erase();
+                            account1.balance = 0;
+                            exit = !exit;
+                            choice();   
+                        }
+                    }
+
+                    if (accountInput == 2)
+                    {
+                        if (account2.name.empty())
+                        {
+                            cout << "\nAccount is empty!\n";
+                            std::this_thread::sleep_for(std::chrono::seconds(2));
+                        }
+
+                        else
+                        {
+                            cout << "\n\nDeleted account: " << account2.name << "\n\n";
+                            account2.name = account2.name.erase();
+                            account2.balance = 0;
+                            exit = !exit;
+                            choice();
+                        }
+                    }
+
+                    if (accountInput == 3)
+                    {
+                        if (account3.name.empty())
+                        {
+                            cout << "\nAccount is empty!\n";
+                            std::this_thread::sleep_for(std::chrono::seconds(2));
+                        }
+
+                        else
+                        {
+                            cout << "\n\nDeleted account: " << account3.name << "\n\n";
+                            account3.name = account3.name.erase();
+                            account3.balance = 0;
+                            exit = !exit;
+                            choice();
+                        }
+                    }
+
+                    else
+                    {
+                        cout << "\nChoose an account!\n";
+                    }
+                }
             }
             
             if (input == "deposit")
             {
-                
+                bool exit = false;
+                int accountInput;
+                double money;
+
+                while(!exit)
+                {
+                    exit = false;
+
+                    system("cls");
+                    cout << "---ACCOUNTS---\n";
+                    cout << "1: " << account1.name << "\n";
+                    cout << "2: " << account2.name << "\n";
+                    cout << "3: " << account3.name << "\n";
+                    cout << "--------------\n\n";
+                    cin.ignore();
+                    cout << "Choose a bank account: ";
+                    cin >> accountInput;
+
+                    if (accountInput == 1)
+                    {
+                        if (account1.name.empty())
+                        {
+                            cout << "\nAccount is empty!\n";
+                            std::this_thread::sleep_for(std::chrono::seconds(2));
+                        }
+
+                        else
+                        {   
+                            cout << "\n\nEnter ammount of money to deposit to account: ";
+                            cin >> money;
+
+                            if (money <= bal)
+                            {
+                                account1.balance = account1.balance + money;
+                                cout << "Added " << money << "$ to account " << account1.name << "\n\n";
+
+                                exit = !exit;
+                                choice();
+                            }
+
+                            else
+                            {
+                                cout << "\n\nYou do not own that much money!\n\n";
+                                std::this_thread::sleep_for(std::chrono::seconds(2));
+                            }
+                        }
+                    }
+
+                    if (accountInput == 2)
+                    {
+                        if (account2.name.empty())
+                        {
+                            cout << "\nAccount is empty!\n";
+                            std::this_thread::sleep_for(std::chrono::seconds(2));
+                        }
+
+                        else
+                        {   
+                            cout << "\n\nEnter ammount of money to deposit to account: ";
+                            cin >> money;
+
+                            if (money <= bal)
+                            {
+                                account2.balance = account2.balance + money;
+                                cout << "Added " << money << "$ to account " << account2.name << "\n\n";
+
+                                exit = !exit;
+                                choice();
+                            }
+
+                            else
+                            {
+                                cout << "\n\nYou do not own that much money!\n\n";
+                                std::this_thread::sleep_for(std::chrono::seconds(2));
+                            }
+                        }
+                    }
+
+                    if (accountInput == 3)
+                    {
+                        if (account3.name.empty())
+                        {
+                            cout << "\nAccount is empty!\n";
+                            std::this_thread::sleep_for(std::chrono::seconds(2));
+                        }
+
+                        else
+                        {   
+                            cout << "\n\nEnter ammount of money to deposit to account: ";
+                            cin >> money;
+
+                            if (money <= bal)
+                            {
+                                account3.balance = account3.balance + money;
+                                cout << "Added " << money << "$ to account " << account3.name << "\n\n";
+
+                                exit = !exit;
+                                choice();
+                            }
+
+                            else
+                            {
+                                cout << "\n\nYou do not own that much money!\n\n";
+                                std::this_thread::sleep_for(std::chrono::seconds(2));
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        cout << "\nChoose an account!\n";
+                    }
+                }
             }
             
             if (input == "withdrawal")
